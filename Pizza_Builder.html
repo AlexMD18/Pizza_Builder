@@ -1,0 +1,152 @@
+﻿<!--
+Alex Drogo
+09/15/2020
+CIS 4296
+Prof. Pascucci
+Description: The pizzaria home page where customers will be able to order their food.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="Pizza_Builder_Stylesheet.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="Images/pizza_icon.png" />
+    <title>Weirdough's Pizza</title>
+</head>
+<body>
+    <form method="post" action="Pizza_Builder_Backend.aspx">
+        <div id="pizza_menu">
+            <h1>Welcome to Weirdough's Pizza</h1>
+            <h2>Build your meal below!</h2>
+            <!--Pizza Shop Info and Welcom-->
+            <p>Please enter your personal information below</p>
+            <!--Customer Name-->
+            Name:
+            <input type="text" name="txtCustName" required /> <br />
+
+            <!--Customer Address-->
+            Address: <input type="text" name="txtCustAddress" required /> <br />
+
+            <!--Customer Phone Number-->
+            Phone Number: <input type="text" name="txtCustPhone" required /> <br />
+
+            <h4>Select Your Pizza Options Below!</h4>
+
+            <!--Radio Button to select pickup or delivery-->
+            <strong>Take Out Options:</strong>
+            <input type="radio" name="rdioTkoOption" id="takeout1" value="Pick Up" required>Pick Up
+            <input type="radio" name="rdioTkoOption" id="takeout2" value="Delivery +($5.00)">Delivery +($5.00)
+            <br />
+
+            <!--Radio Button to select size of pizza-->
+            <strong>Pizza Size:</strong>
+            <br />
+            <input type="radio" name="rdioPizzaSize" id="size1" value="Small ($8.99)" required>Small ($8.99)
+            <input type="radio" name="rdioPizzaSize" id="size2" value="Medium ($10.99)">Medium ($10.99)
+            <input type="radio" name="rdioPizzaSize" id="size3" value="Large ($12.99)">Large ($12.99)
+            <input type="radio" name="rdioPizzaSize" id="size4" value="Extra Large ($15.99)">Extra Large ($15.99)
+            <br />
+
+            <!--DDL for pizza crust type-->
+            <strong>Crust Type:</strong>
+            <select name="ddlCrustType" required>
+                <option value="">Choose Option</option>
+                <option value="Regular Crust">Regular</option>
+                <option value="Stuffed Crust +($1.99)">Stuffed Crust +($1.99)</option>
+                <option value="Deep Dish +($2.99)">Deep Dish +($2.99)</option>
+                <option value="Thin Crust">Thin Crust</option>
+                <option value="Cheesy Garlic Butter +($0.99)">Cheesy Garlic Butter +($0.99)</option>
+            </select>
+            <br />
+
+            <!--DDL for sauce type-->
+            <strong>Type of Sauce:</strong>
+            <select name="ddlSauceType" required>
+                <option value="">Choose Option</option>
+                <option value="Red Sauce">Red Sauce</option>
+                <option value="White Sauce">White Sauce</option>
+                <option value="Barbecue Sauc">Barbecue Sauce</option>
+                <option value="Buffalo Sauce">Buffalo Sauce</option>
+                <option value="Garlic Ranch Sauce">Garlic Ranch Sauce</option>
+                <option value="Pesto Sauce">Pesto Sauce</option>
+                <option value="None">No Sauce</option>
+            </select>
+            <br />
+
+            <!--Checkbox for toppings. Select as many as they want-->
+            <strong>Pizza Toppings:</strong>
+            <br />
+            <input type="checkbox" name="chkToppings" value=" Pepperoni">Pepperoni
+            <input type="checkbox" name="chkToppings" value=" Sausage">Sausage
+            <input type="checkbox" name="chkToppings" value=" Bacon">Bacon
+            <input type="checkbox" name="chkToppings" value=" Ham">Ham
+            <input type="checkbox" name="chkToppings" value=" Onion">Onion
+            <input type="checkbox" name="chkToppings" value=" Peppers">Peppers
+            <br />
+            <input type="checkbox" name="chkToppings" value=" Mushroom">Mushroom
+            <input type="checkbox" name="chkToppings" value=" Anchovies">Anchovies
+            <input type="checkbox" name="chkToppings" value=" Olives">Olives
+            <input type="checkbox" name="chkToppings" value=" Pineapple">Pineapple
+            <input type="checkbox" name="chkToppings" value=" Chicken">Chicken
+            <input type="checkbox" name="chkToppings" value=" Oregano">Oregano
+            <br />
+
+            <!--Checkbox for premium toppings. Select as many as they want-->
+            <strong>Premium Toppings($0.50 Extra Per Topping):</strong>
+            <br />
+            <input type="checkbox" name="chkPremToppings" value=" Extra Cheese +($0.50)">Extra Cheese
+            <input type="checkbox" name="chkPremToppings" value=" Extra Meat +($0.50)">Extra Meat
+            <input type="checkbox" name="chkPremToppings" value=" Meat Lovers +($0.50)">Meat Lovers
+            <input type="checkbox" name="chkPremToppings" value=" Cheese Burgers +($0.50)">Cheese Burger
+            <input type="checkbox" name="chkPremToppings" value=" Taco +($0.50)">Taco
+            <br />
+
+            <!--Family Meal, DDL for drink, side -->
+            <strong>Make It A Family Meal ($4.99):</strong>
+            <br />
+            <input type="radio" name="rdioFamilyMeal" id="yes" value="Yes +($4.99)" required>Yes
+            <input type="radio" name="rdioFamilyMeal" id="no" value="No">No
+            <br />
+            <select name="ddlDrinkType">
+                <option selected>Choose Option</option>
+                <option value="Coca-Cola">Coca-Cola</option>
+                <option value="Diet Coke">Diet Coke</option>
+                <option value="Dr Pepper">Dr. Pepper</option>
+                <option value="Sprite">Sprite</option>
+                <option value="Powerade">Powerade</option>
+                <option value="Vitamin Water">Vitamin Water</option>
+                <option value="Lemonade">Lemonade</option>
+                <option value="Iced Tea">Iced Tea</option>
+            </select>
+            <select name="ddlSideType">
+                <option selected>Choose Option</option>
+                <option value="Salad">Salad</option>
+                <option value="Buffalo Wings">Buffalo Wings</option>
+                <option value="Barbecue Wings">Barbecue Wings</option>
+                <option value="Garlic Knots">Garlic Knots</option>
+                <option value="Cinnamon Rolls">Cinnamon Rolls</option>
+            </select>
+            <br />
+
+            <!--Txt Box for user to type tip-->
+            <strong>Tip:</strong>
+            <input type="text" name="txtTip" /> <br />
+            <br />
+            
+            <!--Buttons to submit or clear form-->
+            <input type="submit" value="Submit Order">
+            <input type="reset" value="Start Over">
+        </div>
+    </form>
+
+    <!--This blocks the user from selecting an item from the family meal ddl when they select the no radio button-->
+    <script>
+        $('input[name="rdioFamilyMeal"]').on('change', function () {
+            $('select[name="ddlDrinkType"]').attr('disabled', this.value != "Yes +($4.99)")
+            $('select[name="ddlSideType"]').attr('disabled', this.value != "Yes +($4.99)")
+        });
+    </script>
+</body>
+</html>
